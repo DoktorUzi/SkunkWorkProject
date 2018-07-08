@@ -2,18 +2,18 @@
 
 int main () {
 	int num;
-	int FATT;
+	int FATTONE;
 	
-	printf("Inserire il numero di cui calcolare il fattoriale:");
+	printf("Inserire il numero di cui calcolare il Fattoriale:");
 	scanf("%d", &num);
 	printf("\n");
 	
-	FATT=1;
+	FATTONE=1;
 	while(num!=1){
-		FATT=FATT*num;
+		FATTONE=FATTONE*num;
 		num--;
 	}
 	
-	printf("Il fattoriale di %d e' %d", num,FATT);
+	printf("Il Fattoriale di %d e' %d", num,FATTONE);
 	scanf("%d", &num);
 }

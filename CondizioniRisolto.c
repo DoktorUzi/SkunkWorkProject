@@ -1,6 +1,8 @@
 #include<stdio.h>
 #define N 5
 
+// Evviva le patate!
+
 int seprimo (int num) {
 	int count=0;
 	while (count <= num/2) {
