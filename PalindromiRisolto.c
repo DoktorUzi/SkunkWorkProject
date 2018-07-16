@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+#include<stdio.h>
 #define N 10
 
 /*
@@ -21,7 +21,7 @@ int palindromoN2(char* V, int lenght) {
 	int i;
 	int count;
 	char A[lenght];
-	count=0;erqhjUEPUIruiopwrjjRIO
+	count=0;
 	for (i=0;i<lenght;i++)
 		if(V[i]!=' '&&V[i]!=0){
 			A[count]=V[i];
