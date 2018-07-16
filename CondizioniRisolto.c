@@ -1,7 +1,7 @@
 #include<stdio.h>
 #define N 5
 
-// Evviva le patate!
+// Meno patate più documents
 
 int seprimo (int num) {
 	int count=0;
