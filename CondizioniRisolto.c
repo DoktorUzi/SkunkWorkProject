@@ -10,6 +10,7 @@ int seprimo (int num) {
 			return 0;
 		count++;
 	}
+	// BLA BLA BLA PAOLO GAY BLA BLA BLA BLA
 	return 1;
 }
 
