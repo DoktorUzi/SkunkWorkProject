@@ -1,0 +1,21 @@
+Data: 24/07/2018
+Sviluppatore: Daniele Nava
+
+Guida di partenza: Unity Tutorial - Building your unity game to an android device for Testing
+
+Procedura effettuata su ASUS Zenfone Go 5. Android versione 6.0.1
+
+Da scaricare:
+- Java Development Kit (sito Oracle da errore 404, usare un Mirror);
+- Android Studio, sono necessari soltanto i Tools;
+
+Problemi riscontrati:
+Unity ha problemi di compatibilità con le versioni più recenti di entrambi gli ambienti.
+
+Java Development Kit.
+Ad oggi, la versione più aggiornata disponibile è la 10. Scaricare la versione 8 che si è dimostrata compatibile
+
+Android Tools.
+Scaricare la versione 25.2.5 facilmente trovabile nei file exchange. Sostituire tutto il contenuto dell'archivio con il contenuto della cartella 'tools', nella directory di installazione di Android Studio. Se il processo di Build non dovesse ancora funzionare, nella cartella di installazione di Android studio, spostare il file 'Zipalign.exe' dalla cartella 'Build-Tools'alla cartella tools. Sostituire tutto il contenuto.
+
+Seguire una guida per sbloccare le impostazioni sviluppatore su telefono android. Spuntare l'opzione 'Permetti Debug USB'.
