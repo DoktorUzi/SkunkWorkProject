@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 95ba19c1dfceb224cbd816c66d0a76f9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Prototype1: {fileID: 1127047188901816, guid: c075b840673d9264f8df3551294dedd4,
+      type: 2}
+  - Prototype2: {fileID: 1273512943834094, guid: 0d4f0731a1ca39d478f015ce5e9a67c9,
+      type: 2}
+  - Prototype3: {fileID: 1857197088869726, guid: 3e9231a69abc315438f72c4158f590df,
+      type: 2}
+  - Prototype4: {fileID: 1127854826215946, guid: 9570151aae4d67c4182daa7396f9da64,
+      type: 2}
+  - Prototype5: {fileID: 1158513372859420, guid: e109493f6c4213c41a740fff4dd63585,
+      type: 2}
+  - Prototype6: {fileID: 1593345641469242, guid: f1144de9a076078488955072ee296c88,
+      type: 2}
+  - Prototype7: {fileID: 1699002406712230, guid: 4e38d18052d3f154fba85e370a5fd016,
+      type: 2}
+  - Prototype8: {fileID: 1216684224924052, guid: 917ed9577b0a2b34e888def2d5cc4329,
+      type: 2}
+  - Prototype9: {fileID: 1131620220010242, guid: 7b3dbe43e6ab2424dbb78989b3028360,
+      type: 2}
+  - Prototype10: {fileID: 1096564908451646, guid: ff0e946a468a7ea4ca875e4baa22f4b3,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
