@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 114755193250119354}
   - component: {fileID: 135602306988915196}
   - component: {fileID: 114696843809225136}
+  - component: {fileID: 95781242381352200}
   m_Layer: 0
   m_Name: objectSample1
-  m_TagString: Untagged
+  m_TagString: ListItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,6 +44,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95781242381352200
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1127047188901816}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc0aff7f1a85de048bcd5a7aeb50c11f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114696843809225136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,15 +73,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183479b70c8a7404a84bcd6977de552e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoastFactorFree: 0.02
-  CoastFactorCursor: 0.15
+  TractionFactorFree: 0.01
+  TractionFactorCursor: 0.03
+  DampingFactor: 0.15
   ScrollSpeed: 0.02
   TreshX: 2.5
   TreshY: 0.8
+  dissolveAnimationInSeconds: 1
   FullPrice: 60
   SalePrice: 40
   ID: 1
-  gcScript: {fileID: 0}
 --- !u!114 &114755193250119354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,15 +94,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183479b70c8a7404a84bcd6977de552e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoastFactorFree: 0.02
-  CoastFactorCursor: 0.15
+  TractionFactorFree: 0.01
+  TractionFactorCursor: 0.03
+  DampingFactor: 0.15
   ScrollSpeed: 0.02
   TreshX: 2.5
   TreshY: 0.8
+  dissolveAnimationInSeconds: 1
   FullPrice: 60
   SalePrice: 40
   ID: 1
-  gcScript: {fileID: 0}
 --- !u!135 &135602306988915196
 SphereCollider:
   m_ObjectHideFlags: 1

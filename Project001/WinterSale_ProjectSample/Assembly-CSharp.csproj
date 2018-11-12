@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D6478837-CBC2-A85F-B95A-58040AE7CAC6}</ProjectGuid>
+    <ProjectGuid>{13DB3890-2D7E-85AD-9B2B-29A0B9198F7B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,14 +53,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scenes\CartBehavior.cs" />
+     <Compile Include="Assets\Scenes\CartBehaviorScript.cs" />
      <Compile Include="Assets\Scenes\GameController.cs" />
      <Compile Include="Assets\Scenes\ObjectBehavior.cs" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/Public/Documents/Unity Projects/ProjectSample/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/gitSkunkWorks/Project001/WinterSale_ProjectSample/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/Public/Documents/Unity Projects/ProjectSample/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/gitSkunkWorks/Project001/WinterSale_ProjectSample/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -237,7 +237,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
  </Reference>
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/Public/Documents/Unity Projects/ProjectSample/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/gitSkunkWorks/Project001/WinterSale_ProjectSample/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

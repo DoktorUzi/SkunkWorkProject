@@ -11,17 +11,21 @@ public class ObjectBehavior : MonoBehaviour {
    public float ScrollSpeed         = 0.02F;    // Vertical speed of the list
    public float TreshX              = 2.5F;     // Horizontal dimension of the GameObject PickUp rectangle
    public float TreshY              = 0.8F;     // Vertical dimension of the GameObject PickUp rectangle
-   
+   public float dissolveAnimationInSeconds = 2.0F; // Duration of the main scene in seconds
+
+
    /* This Element Value Parameters */
    public float   FullPrice         = 60.0F;
    public float   SalePrice         = 40.0F;
    public int     ID                = 1;
-      
-   public Camera mainSceneCamera;   
+
+   private float dissolveInitialTime; // Variable to store initial time for Item Dissolve
+   private Camera mainSceneCamera;   
+   private Animator itemAnim;
    private Vector3 TargetPosition; // To store initial value of target position and future evolution
    private Vector3 Momentum = new Vector3();   // To emulate 'inertia' to the gameobject
    
-   private enum ObjectState {FREE, HOLD} // State machine to manage input from user / free movement of gameobject
+   private enum ObjectState {FREE, HOLD, DISSOLVING} // State machine to manage input from user / free movement of gameobject
    private ObjectState state = ObjectState.FREE; // Initialized state to 'free'
 
 	// Use this for initialization
@@ -31,6 +35,8 @@ public class ObjectBehavior : MonoBehaviour {
       TargetPosition = transform.position;
       /* Store Main Camera as Local Variable */
       mainSceneCamera = (GameObject.FindWithTag("MainCamera")).GetComponent(typeof(Camera)) as Camera;
+      /* Import the Animator component of this GameObject (Cart) */
+		itemAnim = GetComponent(typeof(Animator)) as Animator;
 	}
 	
 	// Update is called once per frame
@@ -49,12 +55,14 @@ public class ObjectBehavior : MonoBehaviour {
       {
          if (CursorPosition[0]<(transform.position[0]+TreshX) && CursorPosition[0]>(transform.position[0]-TreshX) &&
              CursorPosition[1]<(transform.position[1]+TreshY) && CursorPosition[1]>(transform.position[1]-TreshY) )
-             {
-                state = ObjectState.HOLD;
-             }
+            {
+               itemAnim.SetTrigger("IsOnHold");
+               state = ObjectState.HOLD;
+            }
       }
       if (Input.GetMouseButtonUp(0))
       {
+         itemAnim.SetTrigger("IsFreeToMove");
          state = ObjectState.FREE;
       }
       
@@ -76,6 +84,14 @@ public class ObjectBehavior : MonoBehaviour {
             Momentum = (1 - DampingFactor) * Momentum + TractionFactorCursor * (CursorPosition-transform.position);
             transform.position = transform.position + Momentum;
             break;
+
+         case ObjectState.DISSOLVING:
+            if (Time.time >= dissolveInitialTime + dissolveAnimationInSeconds)
+            {
+               Destroy(gameObject);
+            }
+            break;
+
       }
 	}
    
@@ -92,10 +108,11 @@ public class ObjectBehavior : MonoBehaviour {
             GameController.objList.Add(ID);
          }
 
-         /* TODO: Smooth disappear into the cart */
-         
-         /* Destroy this gameObject from scene */
-         Destroy(gameObject);
+         /* Disappear into the cart */
+         dissolveInitialTime = Time.time; // Store initial time of Dissolve Animation
+         itemAnim.SetTrigger("IsFreeToMove");
+         itemAnim.SetTrigger("DissolveTrigger");
+         state = ObjectState.DISSOLVING;
       }
    }
 }

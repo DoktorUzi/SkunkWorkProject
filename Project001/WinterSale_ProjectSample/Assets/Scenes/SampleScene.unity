@@ -441,6 +441,11 @@ Prefab:
       propertyPath: m_Name
       value: GamePlane
       objectReference: {fileID: 0}
+    - target: {fileID: 64078974982585592, guid: 316e44ed39819704d9456ceb6ddd3fc0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 316e44ed39819704d9456ceb6ddd3fc0, type: 2}
   m_IsPrefabParent: 0
@@ -570,7 +575,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 135127344994209508, guid: f73491a4ff687fe4495e4c6af3d7c271,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135127344994209508, guid: f73491a4ff687fe4495e4c6af3d7c271, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f73491a4ff687fe4495e4c6af3d7c271, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1574918085
@@ -778,6 +789,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1896233488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 204fb2b49362cbe438b4b158c976de3b, type: 3}
+  m_Script: {fileID: 11500000, guid: cbba6341cbd52784dbc43dc7b86cf2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1896233490
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1896233488}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4275cc9092040604c839f9e713231ea4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &1896233491
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1896233488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 0
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
