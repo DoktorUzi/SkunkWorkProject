@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4821066013222390}
   - component: {fileID: 212475738959550770}
   - component: {fileID: 114133411258935610}
-  - component: {fileID: 114459711735395620}
   - component: {fileID: 95808109291792486}
   - component: {fileID: 65319754715746214}
   m_Layer: 0
@@ -75,27 +74,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114133411258935610
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1699002406712230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 183479b70c8a7404a84bcd6977de552e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TractionFactorFree: 0.01
-  TractionFactorCursor: 0.03
-  DampingFactor: 0.15
-  ScrollSpeed: 0.02
-  TreshX: 2.5
-  TreshY: 0.8
-  dissolveAnimationInSeconds: 1
-  FullPrice: 60
-  SalePrice: 40
-  ID: 1
---- !u!114 &114459711735395620
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

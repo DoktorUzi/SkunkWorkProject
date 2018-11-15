@@ -52,18 +52,7 @@ public class ObjectBehavior : MonoBehaviour {
       Vector3 CursorPosition = mainSceneCamera.ScreenToWorldPoint(Input.mousePosition);
       CursorPosition.z = 0.0F; // 2D subspace where game happen is [Z=0]
       
-      /* Conditions to permit hold of the object:
-         - abs(deltaX) is less than TreshX and abs(deltaY) is less than TreshY
-         - state is not in Dissolving (the object is not to be destroyed) */
-//      if (state != ObjectState.DISSOLVING && Input.GetMouseButtonDown(0))
-//      {
-//         if (CursorPosition[0]<(transform.position[0]+TreshX) && CursorPosition[0]>(transform.position[0]-TreshX) &&
-//             CursorPosition[1]<(transform.position[1]+TreshY) && CursorPosition[1]>(transform.position[1]-TreshY) )
-//            {
-//               itemAnim.SetTrigger("IsOnHold");
-//               state = ObjectState.HOLD;
-//            }
-//      }
+      /* Object is set to FREE movement when it is released and not dissolving */
       if (state != ObjectState.DISSOLVING && Input.GetMouseButtonUp(0))
       {
          itemAnim.SetTrigger("IsFreeToMove");
@@ -85,12 +74,14 @@ public class ObjectBehavior : MonoBehaviour {
          case ObjectState.HOLD:
             Momentum = (1 - DampingFactor) * Momentum + TractionFactorCursor * (CursorPosition-transform.position);
             /* GameObject should follow the user input */
-            if (ID == 0)
-               Debug.Log(Momentum);
             transform.position = transform.position + Momentum;
             break;
 
          case ObjectState.DISSOLVING:
+            Momentum = (1 - DampingFactor) * Momentum + TractionFactorCursor * (TargetPosition-transform.position);
+            /* GameObject should drift to the cart */
+            transform.position = transform.position + Momentum;
+            
             if (Time.time >= dissolveInitialTime + dissolveAnimationInSeconds)
             {
                Destroy(gameObject);
@@ -123,6 +114,8 @@ public class ObjectBehavior : MonoBehaviour {
          /* Disappear into the cart */
          dissolveInitialTime = Time.time; // Store initial time of Dissolve Animation
          gameObject.GetComponent<Collider>().enabled = false;
+         /* Set the TargetPosition of the movement equal to the Cart */
+         TargetPosition = otherObj.gameObject.transform.position;
          itemAnim.SetTrigger("IsFreeToMove");
          itemAnim.SetTrigger("DissolveTrigger");
          state = ObjectState.DISSOLVING;
