@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4108899064397402}
   - component: {fileID: 212549952678873914}
   - component: {fileID: 114995238508230792}
-  - component: {fileID: 135316506809358816}
   - component: {fileID: 114666668272940246}
   - component: {fileID: 95285877214899046}
+  - component: {fileID: 65722118142829316}
   m_Layer: 0
   m_Name: objectSample4
   m_TagString: ListItem
@@ -44,6 +44,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65722118142829316
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1127854826215946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 2.8, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95285877214899046
 Animator:
   serializedVersion: 3
@@ -104,18 +116,6 @@ MonoBehaviour:
   FullPrice: 60
   SalePrice: 40
   ID: 1
---- !u!135 &135316506809358816
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1127854826215946}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212549952678873914
 SpriteRenderer:
   m_ObjectHideFlags: 1

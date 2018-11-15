@@ -145,6 +145,24 @@ public class GameController : MonoBehaviour {
             mainSceneCamera.enabled =  true;
             menuCamera.enabled =       false;
             
+            if (Input.GetMouseButtonDown(0))
+            {
+               /* Input mouse position is mapped to the 3D World (only work for orthogonal camera) */
+               /* NOTE: Camera Component should be tagged "MainCamera" to avoid missing pointer    */
+               Vector3 CursorPosition = menuCamera.ScreenToWorldPoint(Input.mousePosition);
+               CursorPosition.z = 0.0F; // 2D subspace, where game happen, is [Z=0]
+
+               /* Transform the click of the mouse in a Ray */
+               Ray ray = mainSceneCamera.ScreenPointToRay(Input.mousePosition);
+               RaycastHit hit;
+
+               if(Physics.Raycast(ray,out hit) && hit.transform.tag == "ListItem")
+               {
+                  /* Call method on the ListItem script to set the state on HOLD */
+                  hit.transform.gameObject.GetComponent<ObjectBehavior>().GrabItem();
+               }
+            }
+
             /* Go to end scene when the time is finished */
             if (Time.time - initialTime > mainSceneDurationSeconds)
             {
