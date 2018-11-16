@@ -44,10 +44,7 @@ public class ObjectBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () 
    {  
-      /* Update target position */
-		TargetPosition = TargetPosition + new Vector3(0,ScrollSpeed,0);
-      
-      /* Input mouse position is mapped to the 3D World (only work for orthogonal camera) */
+            /* Input mouse position is mapped to the 3D World (only work for orthogonal camera) */
       /* NOTE: Camera Component should be tagged "MainCamera" to avoid missing pointer    */
       Vector3 CursorPosition = mainSceneCamera.ScreenToWorldPoint(Input.mousePosition);
       CursorPosition.z = 0.0F; // 2D subspace where game happen is [Z=0]
@@ -63,6 +60,9 @@ public class ObjectBehavior : MonoBehaviour {
       switch (state) 
       {
          case ObjectState.FREE:
+            /* Update target position */
+            TargetPosition = TargetPosition + new Vector3(0,ScrollSpeed,0);
+      
             /* NOTE: To simulate presence of inertia, the equation of motion is solved: m x''+ c x' = F, where F is
                a force trusting in the direction of the target position. Differentiating: m dV + c V = k*Error, therefore
                dividing by m: dV = k1*Error - k2 V and V(k+1) = (1-k2) V(k) + k1 * Error. The overall transition can be described by tuning k1 and k2 parameters. */
@@ -72,6 +72,9 @@ public class ObjectBehavior : MonoBehaviour {
             break;
             
          case ObjectState.HOLD:
+            /* Update target position */
+            TargetPosition = TargetPosition + new Vector3(0,ScrollSpeed,0);
+            
             Momentum = (1 - DampingFactor) * Momentum + TractionFactorCursor * (CursorPosition-transform.position);
             /* GameObject should follow the user input */
             transform.position = transform.position + Momentum;
@@ -82,6 +85,8 @@ public class ObjectBehavior : MonoBehaviour {
             /* GameObject should drift to the cart */
             transform.position = transform.position + Momentum;
             
+            Debug.Log(TargetPosition);
+
             if (Time.time >= dissolveInitialTime + dissolveAnimationInSeconds)
             {
                Destroy(gameObject);

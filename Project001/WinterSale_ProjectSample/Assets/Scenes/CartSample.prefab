@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212855349120252020}
   - component: {fileID: 54245965467213940}
   - component: {fileID: 135127344994209508}
+  - component: {fileID: 95656132160267518}
   m_Layer: 0
   m_Name: CartSample
   m_TagString: Untagged
@@ -57,6 +58,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &95656132160267518
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1573032988245746}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4275cc9092040604c839f9e713231ea4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!135 &135127344994209508
 SphereCollider:
   m_ObjectHideFlags: 1
