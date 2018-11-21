@@ -74,7 +74,7 @@ public class ObjectBehavior : MonoBehaviour {
          case ObjectState.HOLD:
             /* Update target position */
             TargetPosition = TargetPosition + new Vector3(0,ScrollSpeed,0);
-            
+
             Momentum = (1 - DampingFactor) * Momentum + TractionFactorCursor * (CursorPosition-transform.position);
             /* GameObject should follow the user input */
             transform.position = transform.position + Momentum;
@@ -84,8 +84,6 @@ public class ObjectBehavior : MonoBehaviour {
             Momentum = (1 - DampingFactor) * Momentum + TractionFactorCursor * (TargetPosition-transform.position);
             /* GameObject should drift to the cart */
             transform.position = transform.position + Momentum;
-            
-            Debug.Log(TargetPosition);
 
             if (Time.time >= dissolveInitialTime + dissolveAnimationInSeconds)
             {
